@@ -19,6 +19,7 @@ public class NumberNexus{
 
             BuzzNumber(number);
             Duck(number);
+            Palindrome(number);
 
             input.nextLine();
 
@@ -57,4 +58,17 @@ public class NumberNexus{
         }
         System.out.println("        duck: false");
    }
+
+   private static void Palindrome(int number){
+        int temp = number;
+        int rev = 0;
+        while(temp > 0 ){
+            int digit = temp % 10;
+            rev = rev *10 + digit;
+            temp /= 10;
+        }
+        System.out.println("        Palindrome: " + (number == rev) );
+    }
+
+    
 }
