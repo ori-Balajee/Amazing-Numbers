@@ -18,6 +18,7 @@ public class NumberNexus{
             }
 
             BuzzNumber(number);
+            Duck(number);
 
             input.nextLine();
 
@@ -38,14 +39,22 @@ public class NumberNexus{
     }
 
     private static void BuzzNumber(int number){
-        if(number % 2 == 0) {
-            System.out.println(number +" "+ "is even");
-        }else{
-            System.out.println(number +" "+ "is odd");
-        }
-
-        if((number % 10) == 7 || (number % 7) == 0){
-            System.out.println(number + "is a Buzz number");
-        }
+       System.out.println("        even: " + (number % 2 == 0));
+       System.out.println("        odd: " + (number % 2 != 0));
+       System.out.println("        buzz: " + (number % 7 == 0 || number % 10 == 7));
     }
+
+    private static void Duck(int number) {
+        int temp = number;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            if (digit == 0) {
+                System.out.println("        duck: true");
+                return;
+            }
+            temp = temp / 10; 
+        }
+        System.out.println("        duck: false");
+   }
 }
